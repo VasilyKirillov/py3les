@@ -38,7 +38,40 @@ ball.penup() #do not drow line while moving
 ball.goto(0, 0)
 
 
+# Function
+def paddle_a_up():
+	y = paddle_a.ycor()
+	y += 20
+	paddle_a.sety(y)
+
+def paddle_a_down():
+	y = paddle_a.ycor()
+	y -= 20
+	paddle_a.sety(y)
+
+def paddle_b_up():
+	y = paddle_b.ycor()
+	y += 20
+	paddle_b.sety(y)
+
+def paddle_b_down():
+	y = paddle_b.ycor()
+	y -= 20
+	paddle_b.sety(y)
+
+# Keyboard binding
+# tells the program to listen to the keybard input
+window.listen()
+# bind  key press on "w" key on keyboard to invocation of puddle_a_up() function
+window.onkeypress(paddle_a_up, "w")
+window.onkeypress(paddle_a_down, "s")
+window.onkeypress(paddle_b_up, "Up")
+window.onkeypress(paddle_b_down, "Down")
+# Keybard bindings
+
+
 # Main game loop
 while True:
     window.update()
+
 
